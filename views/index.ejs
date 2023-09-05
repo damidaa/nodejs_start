@@ -6,9 +6,18 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="post" class="form-example-two">
-    <h1> 김다미는 <%=name%>로 <%=pilmo%>의 배역을 했당^^ </h1>
+    <Center>
+    <a href="/logout"<button type="button">로그아웃</button></a>
+    <h1> 웹사이트 </h1>
+    <h2> 안녕하세요 <%=name%>님 </h2>
+    </Center>
+    <Center>
+    <form action="gosignup" method="post" class="form-example-two">
     <input type="submit" value="Go Sign up" />
     </form>
+    <form action="gosignin" method="post" class="form-example-two">
+    <input type="submit" value="Go Sign in" />
+    </form>
+    </Center>
 </body>
 </html>

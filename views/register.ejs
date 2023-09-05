@@ -7,6 +7,10 @@
 </head>
 <body>
     <CENTER>
+        <% if ( user == 'guest' ){ %>
+        <%} else {%>
+        <p>이미 존재하는 이메일입니다.</p>
+        <% } %>
         <form action="" method="post" class="form-example">
             <div class="form-example">
                 <h1 for="name">username: </h1>
@@ -30,6 +34,16 @@
                 <input type="submit" value="Sign up!" />
               </div>
             </form>
+            <form action="gosignin" method="post" class="form-example">
+                <div class="form-example">
+                    <input type="submit" value="Sign in!" />
+                </div>
+            </form>
+            <form action="goindex" method="post" class="form-example">
+                <div class="form-example">
+                    <input type="submit" value="go Index" />
+                </div>
+            </form>    
     </CENTER>
 </body>
 </html>

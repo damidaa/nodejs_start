@@ -15,6 +15,8 @@ const register_routing = require("./routes/register_routing")
 const login_routing = require("./routes/login_routing")
 
 const mongoose = require("mongoose") 
+const session = require('express-session');
+const FileStore = require('session-file-store')(session);
 
 // Connect to MongoDB
 mongoose.connect("mongodb+srv://root:1234@cluster0.yvy1dyo.mongodb.net/?retryWrites=true&w=majority")
@@ -23,6 +25,13 @@ mongoose.connect("mongodb+srv://root:1234@cluster0.yvy1dyo.mongodb.net/?retryWri
 
 app.use(express.urlencoded({extended:false}))
 app.use(express.json())
+app.use(session({                                          
+    secret:"asdfasffdas",
+    resave:false,
+    saveUninitialized:true 
+    store : new FileStore()                               
+  }))
+
 app.use('/', routing)
 app.use('/dami',damirouting)
 app.use('/register',register_routing)

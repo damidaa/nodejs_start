@@ -1,15 +1,31 @@
-<CENTER>
-    <form action="" method="post" class="form-example-two">
-        <div class="form-example">
-            <h1 for="name">username: </h1>
-            <input type="text" name="name" id="name" required />
-          </div>
-          <div class="form-example">
-            <h1 for="email">password: </h1>
-            <input type="password" name="password" id="password" required />
-          </div>
-          <div class="form-example">
-            <input type="submit" value="Sign in!" />
-          </div>
-        </form>
-</CENTER>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <CENTER>
+        <% if ( user == 'guest' ){ %>
+            <%} else if (user == 'null') {%>
+                <p> email이 존재하지 않습니다.</p>
+            <% } else{%>
+                <p> 비밀번호가 일치하지 않습니다.</p>
+            <% }%>
+        <form action="" method="post" class="form-example-two">
+            <div class="form-example">
+                <h1 for="name">E-mail: </h1>
+                <input type="text" name="email" id="name" required />
+              </div>
+              <div class="form-example">
+                <h1 for="email">password: </h1>
+                <input type="password" name="password" id="password" required />
+              </div>
+              <div class="form-example">
+                <input type="submit" value="Sign in!" />
+              </div>
+            </form>
+    </CENTER>
+</body>
+</html>
