@@ -28,8 +28,8 @@ app.use(express.json())
 app.use(session({                                          
     secret:"asdfasffdas",
     resave:false,
-    saveUninitialized:true 
-    store : new FileStore()                               
+    saveUninitialized:true ,
+    store : new FileStore()                              
   }))
 
 app.use('/', routing)

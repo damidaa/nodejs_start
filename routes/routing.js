@@ -8,11 +8,8 @@ const session = require('express-session');
 
 const FileStore = require('session-file-store')(session);
 
-
-
-router.get('/', (req , res) =>{
-
-    return res.render('index', {name : 'guest'})
+router.get('/',(req , res)=>{
+    return res.render('index',{name:req.session["username"]})
 })
 
 router.post('/gosignup', (req, res)=>{
@@ -30,18 +27,19 @@ router.post('/gosignup', (req, res)=>{
     return res.redirect('/')
  })
 
+ router.get('/logout',function(req, res){
+    req.session.destroy(function(){});
+    res.redirect('/');
+    });
 
 
 
 
 
-
-router.get('/logout',fucntion(req,res){
-    req.session.destroy(function(){
-    res.session.destroy(function(){});
-    res.redirect('/');    
-    })
-})
+// router.get('/logout',fucntion(req,res){
+//     res.session.destroy(function(){});
+//     res.redirect('/');    
+//     })
 
 
 module.exports = router

@@ -9,8 +9,6 @@ const mongoose = require("mongoose")
 const bcrypt = require("bcrypt")
 
 router.get('/', (req , res) =>{
-
-
    res.render('register.ejs', {user: 'guest'})
 })
 
@@ -61,4 +59,5 @@ router.post('/', async (req, res)=>{
     // }
      
 })
+
 module.exports = router
